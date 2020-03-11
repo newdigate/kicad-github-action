@@ -1,15 +1,16 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Kicad pipeline'
+description: 'validate schematic'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
   kicad-project-path:
     description: 'Path to kicad project'
     required: true
-    default: 'BLAH BLAH'
+  kicad-schematic-filename:
+    description: 'filename of kicad schematic'
+    required: true
+  kicad-board-filename:
+    description: 'filename of .kicad_pcb file'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -17,5 +18,8 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
     - ${{ inputs.kicad-project-path }}
+    - ${{ inputs.kicad-schematic-filename }}
+    - ${{ inputs.kicad-board-filename }}
+
+
