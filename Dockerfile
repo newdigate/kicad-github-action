@@ -3,4 +3,4 @@ FROM productize/kicad-automation-scripts
 
 COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["ls -lrt"]
+ENTRYPOINT ["/entrypoint.sh"]
