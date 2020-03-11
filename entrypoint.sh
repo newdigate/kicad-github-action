@@ -1,6 +1,7 @@
 #!/bin/bash -v
 cd hardware
 cd boards
+cd mainboard
 ls -lrt
 pwd
 cd ../..
