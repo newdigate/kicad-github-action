@@ -6,6 +6,10 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  kicad-project-path:
+    description: 'Path to kicad project'
+    required: true
+    default: 'BLAH BLAH'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
