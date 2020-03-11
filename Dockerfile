@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM productize/kicad-automation-scripts
+FROM nicnewdigate/kicad-automation-scripts
 
 COPY entrypoint.sh /entrypoint.sh
 
