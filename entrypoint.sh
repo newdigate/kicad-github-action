@@ -1,5 +1,9 @@
 #!/bin/bash -v
-mkdir output
+pwd
+ls -lrt
+ls -lrt /
+tree 
+tree /
 cd /home/runner/work/teensy-eurorack/teensy-eurorack/$(echo "$1")
 #ls /usr/lib/python2.7/dist-packages/kicad-automation/
 #echo PYTHONPATH=$PYTHONPATH
