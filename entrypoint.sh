@@ -8,8 +8,7 @@ if [ $retval -ne 0 ]; then
     exit 0;
 fi
 
-#python2 -m kicad-automation.pcbnew_automation.run_drc /github/workspace/$1/$3 output/pcb --record
-python2 -m kicad-automation.pcbnew_automation.run_drc /github/workspace/$1/$3 output/pcb
+python2 -m kicad-automation.pcbnew_automation.run_drc /github/workspace/$1/$3 output/pcb --record
 retval=$?
 if [ $retval -ne 0 ]; then
     echo ::set-output name=time::$time
