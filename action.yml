@@ -14,6 +14,10 @@ inputs:
 outputs:
   time: # id of output
     description: 'The time we greeted you'
+  success: # id of output
+    description: 'ERC and DRC was successful'
+  message: # id of output
+    description: 'The output message of the script'    
 runs:
   using: 'docker'
   image: 'Dockerfile'
