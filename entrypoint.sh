@@ -19,8 +19,8 @@ fi
 
 python2 -m kicad-automation.eeschema.schematic export /github/workspace/$1/$2 output/schematic/svg
 python2 -m kicad-automation.eeschema.schematic export -f pdf /github/workspace/$1/$2 output/schematic
-python2 -m kicad-automation.pcbnew_automation.plot /github/workspace/$1/$3 output/pcb/gerbers
-python2 -m kicad-automation.pcbnew_automation.plot -f pdf /github/workspace/$1/$3 output/pcb/gerbers
+python3 -m kicad-automation.pcbnew_automation.plot /github/workspace/$1/$3 output/pcb/gerbers
+python3 -m kicad-automation.pcbnew_automation.plot -f pdf /github/workspace/$1/$3 output/pcb/gerbers
 
 #tree
 echo "parameters: $1 $2 $3"
