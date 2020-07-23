@@ -1,5 +1,5 @@
 #!/bin/bash -v
-python2 -m kicad-automation.eeschema.schematic run_erc --junit_xml /github/workspace/$1/$2 output/schematic
+python2 -m kicad_automation.eeschema.schematic run_erc --junit_xml /github/workspace/$1/$2 output/schematic
 retval=$?
 if [ $retval -ne 0 ]; then
     echo ::set-output name=time::$time
@@ -10,7 +10,7 @@ else
     rm output/schematic/run_erc_schematic_screencast.ogv
 fi
 
-python2 -m kicad-automation.pcbnew_automation.run_drc /github/workspace/$1/$3 output/pcb --record
+python2 -m kicad_automation.pcbnew_automation.run_drc /github/workspace/$1/$3 output/pcb --record
 retval=$?
 if [ $retval -ne 0 ]; then
     echo ::set-output name=time::$time
@@ -21,13 +21,13 @@ else
     rm output/pcb/run_drc_screencast.ogv
 fi
 
-python2 -m kicad-automation.eeschema.schematic export /github/workspace/$1/$2 output/schematic/svg
-python2 -m kicad-automation.eeschema.schematic export -f pdf /github/workspace/$1/$2 output/schematic
+python2 -m kicad_automation.eeschema.schematic export /github/workspace/$1/$2 output/schematic/svg
+python2 -m kicad_automation.eeschema.schematic export -f pdf /github/workspace/$1/$2 output/schematic
 rm output/schematic/svg/export_schematic_screencast.ogv
 rm output/schematic/export_schematic_screencast.ogv
 
-python3 -m kicad-automation.pcbnew_automation.plot /github/workspace/$1/$3 output/pcb/gerbers
-python3 -m kicad-automation.pcbnew_automation.plot -f pdf /github/workspace/$1/$3 output/pcb/gerbers
+python3 -m kicad_automation.pcbnew_automation.plot /github/workspace/$1/$3 output/pcb/gerbers
+python3 -m kicad_automation.pcbnew_automation.plot -f pdf /github/workspace/$1/$3 output/pcb/gerbers
 
 #tree
 echo "parameters: $1 $2 $3"
