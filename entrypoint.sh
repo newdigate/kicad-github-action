@@ -28,6 +28,8 @@ rm output/schematic/export_schematic_screencast.ogv
 
 python3 -m kicad_automation.pcbnew_automation.plot /github/workspace/$1/$3 output/pcb/gerbers
 python3 -m kicad_automation.pcbnew_automation.plot -f pdf /github/workspace/$1/$3 output/pcb/gerbers
+python2 -m kicad_automation.pcbnew_automation.run_interactivebom /github/workspace/$1/$3 output/pcb --record
+cp /kicad-project/hardware/boards/bom/* output/pcb
 
 #tree
 echo "parameters: $1 $2 $3"
