@@ -32,7 +32,7 @@ python3 -m kicad_automation.pcbnew_automation.plot -f pdf /github/workspace/$1/$
 git clone https://github.com/openscopeproject/InteractiveHtmlBom.git ~/InteractiveHtmlBom
 cp -r ~/InteractiveHtmlBom/ ~/.config/kicad/scripting/
 python2 -m kicad_automation.pcbnew_automation.run_interactivebom /github/workspace/$1/$3 output/pcb --record
-cp /kicad-project/hardware/boards/bom/* output/pcb
+cp /github/workspace/kicad-project/hardware/boards/bom/* output/pcb
 
 #tree
 echo "parameters: $1 $2 $3"
